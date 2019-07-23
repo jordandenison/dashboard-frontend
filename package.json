@@ -1,0 +1,40 @@
+{
+  "name": "dashboard-frontend",
+  "description": "Demo real-time dashboard frontend based on React and Feathers.js.",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "@feathersjs/authentication-client": "^1.0.11",
+    "@feathersjs/feathers": "^3.3.1",
+    "@feathersjs/socketio-client": "^1.2.1",
+    "feathers-redux": "^3.0.0",
+    "feathers-reduxify-authentication": "^1.0.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^6.0.1",
+    "react-scripts": "2.1.8",
+    "redux": "^4.0.1",
+    "redux-promise-middleware": "^6.1.0",
+    "redux-saga": "^1.0.2",
+    "redux-thunk": "^2.3.0",
+    "semantic-ui-react": "^0.86.0",
+    "socket.io-client": "^2.2.0",
+    "standard": "^12.0.1"
+  },
+  "scripts": {
+    "start": "NODE_PATH=src/ react-scripts start",
+    "build": "NODE_PATH=src/ react-scripts build",
+    "lint": "standard --fix src/",
+    "test": "NODE_PATH=src/ react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
