@@ -3,7 +3,7 @@ import socketio from '@feathersjs/socketio-client'
 import auth from '@feathersjs/authentication-client'
 import io from 'socket.io-client'
 
-const port = window.location.hostname === 'dashboard.denisonweb.com' ? 443 : 3001
+const port = window.location.hostname === 'dashboard-api.denisonweb.com' ? 443 : 3001
 
 export const url = `${window.location.hostname}:${port}`
 
