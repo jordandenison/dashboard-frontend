@@ -1,8 +1,6 @@
-.content {
-  margin: 50px 0;
-}
-
-#canvas {
-  display: block;
-  margin: 0 auto;
+.contentContainer {
+  position: absolute;
+  width: 100%;
+  top: 60px;
+  left: 15rem;
 }

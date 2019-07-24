@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux'
+import { connectRouter } from 'connected-react-router'
 
 import services from 'lib/feathers/feathersServices'
 import currentUser from 'redux/reducers/currentUser'
@@ -9,4 +10,7 @@ const reducers = {
   users: services.users.reducer
 }
 
-export default combineReducers(reducers)
+export default history => combineReducers({
+  router: connectRouter(history),
+  ...reducers
+})

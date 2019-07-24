@@ -1,20 +1,29 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Provider } from 'react-redux'
-import { Container, Header } from 'semantic-ui-react'
+import { ConnectedRouter } from 'connected-react-router'
+
+import { Container } from 'semantic-ui-react'
+import store, { history } from 'redux/store'
 
 import './App.css'
-import store from 'redux/store'
 
-class App extends Component {
-  render () {
-    return (
-      <Provider store={store}>
-        <Container className='content'>
-          <Header as='h1' textAlign='center'>Dashboard</Header>
-        </Container>
-      </Provider>
-    )
-  }
-}
+import Header from 'components/Header'
+import Sidebar from 'components/Sidebar'
+
+import Routes from './routes'
+
+const App = () => (
+  <Provider store={store}>
+    <ConnectedRouter history={history}>
+      <Container fluid>
+        <Header />
+        <Sidebar />
+        <div className='contentContainer'>
+          <Routes />
+        </div>
+      </Container>
+    </ConnectedRouter>
+  </Provider>
+)
 
 export default App
