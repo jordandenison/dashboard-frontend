@@ -3,9 +3,11 @@ import socketio from '@feathersjs/socketio-client'
 import auth from '@feathersjs/authentication-client'
 import io from 'socket.io-client'
 
-const port = window.location.hostname === 'dashboard-api.denisonweb.com' ? 443 : 3001
+const productionUrl = 'dashboard.denisonweb.com'
 
-export const url = `${window.location.hostname}:${port}`
+const port = window.location.hostname === productionUrl ? 443 : 3001
+
+export const url = `${window.location.hostname === productionUrl ? 'dashboard-api.denisonweb.com' : window.location.hostname}:${port}`
 
 export const socket = io(url, {
   transports: ['websocket']
