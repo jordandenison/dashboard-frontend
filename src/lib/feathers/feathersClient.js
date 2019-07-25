@@ -7,7 +7,7 @@ const productionUrl = 'dashboard.denisonweb.com'
 
 const port = window.location.hostname === productionUrl ? 443 : 3001
 
-export const url = `${window.location.hostname === productionUrl ? 'dashboard-api.denisonweb.com' : `http://${window.location.hostname}`}:${port}`
+export const url = `${window.location.hostname === productionUrl ? 'https://dashboard-api.denisonweb.com' : `http://${window.location.hostname}`}:${port}`
 
 export const socket = io(url, {
   transports: ['websocket']
