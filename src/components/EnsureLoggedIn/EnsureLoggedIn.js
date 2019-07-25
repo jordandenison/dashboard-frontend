@@ -1,12 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-const EnsureLoggedIn = ({ isLoggedIn, children }) =>
-  isLoggedIn ? <div>{children}</div> : <div />
+import Login from 'components/Login'
+
+const EnsureLoggedIn = ({ isLoggedIn, cu, children }) =>
+  isLoggedIn ? <div>{children}</div> : <Login />
 
 const mapStateToProps = state => {
   return {
-    isLoggedIn: state.currentUser.id
+    isLoggedIn: state.currentUser.id,
+    cu: state.currentUser
   }
 }
 

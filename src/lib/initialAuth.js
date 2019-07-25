@@ -1,13 +1,17 @@
 import feathersAuthentication from 'lib/feathers/feathersAuthentication'
 
-const init = async store => {
-  const authenticationOptions = {
-    strategy: 'local',
-    email: `test${window.location.hostname === 'boilerplate-development.com' ? '2' : ''}@test.com`,
-    password: 'test'
-  }
+const urlParams = new URLSearchParams(window.location.search)
+const queryStringAccessToken = urlParams.get('accessToken')
 
-  console.log('logging in user ', authenticationOptions.email)
+const accessToken = queryStringAccessToken || (window.localStorage && window.localStorage.getItem && window.localStorage.getItem('feathers-jwt'))
+
+const processLogin = async store => {
+  if (!accessToken) { return }
+
+  const authenticationOptions = {
+    strategy: 'jwt',
+    accessToken
+  }
 
   try {
     const results = await store.dispatch(feathersAuthentication.authenticate(authenticationOptions))
@@ -15,13 +19,18 @@ const init = async store => {
     const action = {
       type: 'LOGIN_SUCCESS',
       user: results.value.user,
-      accessToken: results.value.accessToken
+      accessToken: results.value.accessToken,
+      queryStringAccessToken
     }
 
     store.dispatch(action)
   } catch (e) {
     console.log(`Token login error: ${e.message}`)
   }
+}
+
+const init = async store => {
+  return processLogin(store, accessToken)
 }
 
 export default init
