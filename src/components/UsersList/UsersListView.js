@@ -15,7 +15,7 @@ const UsersListView = ({ loaded, users, setPage, setSort, setSearch, page, searc
     <div className='usersComponent'>
       <div>
         <Input key='usersComponentSearch' loading={!loaded} icon='search' placeholder='Search...' onChange={(e, { value }) => { setSearch(value) }} value={search} />
-        <Button floated='right' color='teal' onClick={() => routeTo('/users/create')}>Add User</Button>
+        <Button floated='right' onClick={() => routeTo('/users/create')}>Add User</Button>
       </div>
       <br />
       { !loaded ? <div className='usersComponent'>
@@ -49,7 +49,7 @@ const UsersListView = ({ loaded, users, setPage, setSort, setSearch, page, searc
 
           { queryResult.users.total > 10 ? <Table.Footer>
             <Table.Row>
-              <Table.HeaderCell floated='right' colSpan={userHeaders.length}>
+              <Table.HeaderCell colSpan={userHeaders.length}>
                 <Pagination
                   activePage={page + 1}
                   totalPages={
@@ -78,7 +78,7 @@ UsersListView.propTypes = {
   setSearch: PropTypes.func,
   page: PropTypes.number,
   search: PropTypes.string,
-  sort: PropTypes.number,
+  sort: PropTypes.object,
   routeTo: PropTypes.func,
   removeUser: PropTypes.func,
   queryResult: PropTypes.object

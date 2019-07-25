@@ -5,7 +5,6 @@ import services from 'lib/feathers/feathersServices'
 
 function * fetch ({ model }) {
   const { page, sort, search } = yield select()
-  console.log('page ', page)
 
   const $sort = sort[model]
   const $skip = page[model] * 10
