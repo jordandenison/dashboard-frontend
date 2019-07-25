@@ -22,8 +22,8 @@ const HeaderView = ({ currentUser, logout, routeTo }) => (
 
 HeaderView.propTypes = {
   currentUser: PropTypes.shape({ email: PropTypes.string }),
-  logout: PropTypes.function,
-  routeTo: PropTypes.function
+  logout: PropTypes.func,
+  routeTo: PropTypes.func
 }
 
 export default HeaderView

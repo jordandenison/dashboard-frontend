@@ -22,7 +22,7 @@ const SidebarView = ({ router, routeTo }) => (
 
 SidebarView.propTypes = {
   router: PropTypes.object,
-  routeTo: PropTypes.function
+  routeTo: PropTypes.func
 }
 
 export default SidebarView
