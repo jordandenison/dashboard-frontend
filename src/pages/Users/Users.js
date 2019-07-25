@@ -1,8 +1,12 @@
-import { connect } from 'react-redux'
-import UsersView from './UsersView'
+import React from 'react'
+import { Segment } from 'semantic-ui-react'
 
-const mapStateToProps = state => ({
-  currentUser: state.currentUser
-})
+import UsersList from 'components/UsersList'
 
-export default connect(mapStateToProps)(UsersView)
+const UsersView = () => (
+  <Segment>
+    <UsersList />
+  </Segment>
+)
+
+export default UsersView

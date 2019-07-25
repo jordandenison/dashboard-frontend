@@ -1,8 +1,10 @@
-import { connect } from 'react-redux'
-import HomeView from './HomeView'
+import React from 'react'
+import { Segment } from 'semantic-ui-react'
 
-const mapStateToProps = state => ({
-  currentUser: state.currentUser
-})
+const HomeView = () => (
+  <Segment>
+    <span>You are now logged in.</span><br /><br />
+  </Segment>
+)
 
-export default connect(mapStateToProps)(HomeView)
+export default HomeView
