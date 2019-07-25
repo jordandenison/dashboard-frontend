@@ -17,8 +17,6 @@ function loginSuccess ({ queryStringAccessToken }) {
 function logout () {
   removeJwtFromLocalStorage()
   put(feathersauthentication.logout())
-
-  window.location.reload()
 }
 
 export default function * watchAuth () {
