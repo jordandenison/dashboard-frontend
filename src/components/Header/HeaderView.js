@@ -1,9 +1,10 @@
 import React from 'react'
-import { Dropdown, Divider, Header, Icon, Menu } from 'semantic-ui-react'
+import { Dropdown, Divider, Header, Menu } from 'semantic-ui-react'
+import PropTypes from 'prop-types'
 
 import './Header.css'
 
-const HeaderView = ({ currentUser, routeTo, logout }) => (
+const HeaderView = ({ currentUser, logout, routeTo }) => (
   <Menu className='headerComponent' fixed='top'>
     <Header as='h1' textAlign='center' className='menuHeader'>Dashboard Demo</Header>
     <Menu.Menu position='right'>
@@ -18,5 +19,11 @@ const HeaderView = ({ currentUser, routeTo, logout }) => (
     </Menu.Menu>
   </Menu>
 )
+
+HeaderView.propTypes = {
+  currentUser: PropTypes.shape({ email: PropTypes.string }),
+  logout: PropTypes.function,
+  routeTo: PropTypes.function
+}
 
 export default HeaderView

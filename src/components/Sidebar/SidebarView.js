@@ -1,12 +1,13 @@
 import React from 'react'
 import { Menu, Icon } from 'semantic-ui-react'
+import PropTypes from 'prop-types'
 
 import './Sidebar.css'
 
 const homeRegexp = /^\/$/
 const usersRegexp = /^\/users/
 
-const SidebarView = ({ routeTo, router }) => (
+const SidebarView = ({ router, routeTo }) => (
   <Menu vertical className='sidebarComponent' fixed='left'>
     <Menu.Item active={homeRegexp.test(router.location.pathname)} onClick={() => routeTo('/')}>
       Home
@@ -18,5 +19,10 @@ const SidebarView = ({ routeTo, router }) => (
     </Menu.Item>
   </Menu>
 )
+
+SidebarView.propTypes = {
+  router: PropTypes.object,
+  routeTo: PropTypes.function
+}
 
 export default SidebarView

@@ -2,8 +2,6 @@ import React from 'react'
 import { Divider, Grid, Header, Segment } from 'semantic-ui-react'
 import { url } from 'lib/feathers/feathersClient'
 
-import './Login.css'
-
 const LoginView = () => (
   <Grid centered>
     <Grid.Column style={{ maxWidth: '400px', marginTop: '200px' }}>

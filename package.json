@@ -3,15 +3,22 @@
   "description": "Demo real-time dashboard frontend based on React and Feathers.js.",
   "version": "0.0.1",
   "private": true,
+  "scripts": {
+    "start": "NODE_PATH=src/ react-scripts start",
+    "build": "NODE_PATH=src/ react-scripts build",
+    "lint": "eslint --fix src/",
+    "test": "NODE_PATH=src/ react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
     "@feathersjs/authentication-client": "^1.0.11",
     "@feathersjs/feathers": "^3.3.1",
     "@feathersjs/socketio-client": "^1.2.1",
     "connected-react-router": "^6.5.2",
-    "eslint": "^6.1.0",
     "feathers-redux": "^3.0.0",
     "feathers-reduxify-authentication": "^1.0.1",
     "history": "^4.9.0",
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.1.0",
@@ -24,15 +31,16 @@
     "redux-saga": "^1.0.2",
     "redux-thunk": "^2.3.0",
     "semantic-ui-react": "^0.86.0",
-    "socket.io-client": "^2.2.0",
-    "standard": "^12.0.1"
+    "socket.io-client": "^2.2.0"
   },
-  "scripts": {
-    "start": "NODE_PATH=src/ react-scripts start",
-    "build": "NODE_PATH=src/ react-scripts build",
-    "lint": "standard --fix src/",
-    "test": "NODE_PATH=src/ react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "eslint": "^6.1.0",
+    "eslint-config-standard": "^13.0.1",
+    "eslint-config-standard-react": "^8.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-standard": "^4.0.0",
+    "standard": "^13.1.0"
   },
   "browserslist": [
     ">0.2%",
