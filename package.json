@@ -15,6 +15,12 @@
     "@feathersjs/feathers": "^3.3.1",
     "@feathersjs/socketio-client": "^1.2.1",
     "connected-react-router": "^6.5.2",
+    "eslint": "^6.1.0",
+    "eslint-config-standard": "^13.0.1",
+    "eslint-config-standard-react": "^8.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-standard": "^4.0.0",
     "feathers-redux": "^3.0.0",
     "feathers-reduxify-authentication": "^1.0.1",
     "history": "^4.9.0",
@@ -31,15 +37,7 @@
     "redux-saga": "^1.0.2",
     "redux-thunk": "^2.3.0",
     "semantic-ui-react": "^0.86.0",
-    "socket.io-client": "^2.2.0"
-  },
-  "devDependencies": {
-    "eslint": "^6.1.0",
-    "eslint-config-standard": "^13.0.1",
-    "eslint-config-standard-react": "^8.0.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-standard": "^4.0.0",
+    "socket.io-client": "^2.2.0",
     "standard": "^13.1.0"
   },
   "browserslist": [
